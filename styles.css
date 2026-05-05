@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Navbar */
 :root{
     --website-white: #F5F0E8;
     --website-green: #00843D;
@@ -27,7 +26,7 @@
 }
 
 .navbar-logo h1 {
-    color:#00843D
+    color:#000000
 }
 
 .navbar-title {
@@ -35,10 +34,10 @@
     text-align: center;
     font-size: 2rem;
     font-weight: 1000;
-    color: var(--website-green);
+    color: #000000;
     letter-spacing: 1px;
     white-space: nowrap;
-    font-family: 'Times New Roman', Times, serif
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .navbar-actions {
@@ -52,7 +51,7 @@
 .nav-btn {
     background: none;
     border: none;
-    color: var(--website-green);
+    color: #000000;
     cursor: pointer;
     padding: 8px;
     border-radius: 6px;
@@ -68,6 +67,79 @@
 
 .nav-btn i {
     font-size: 1.4rem;
+}
+
+.hero-section {
+    position: relative;
+    background-color: var(--website-white);
+    height: 90vh;
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 0;
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3vw;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.hero-word {
+    font-size:108px;
+    font-weight: 900;
+    color: #111;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-text-stroke: 1px red;
+    padding-top: 20px;
+}
+
+.hero-word--green {
+    color: var(--website-green);
+    -webkit-text-stroke: 3px #000;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    outline: auto;
+
+}
+
+.btn-primary {
+    background-color: var(--website-green);
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #111;
+    color: #fff;
 }
 
 @media (max-width: 400px) {
