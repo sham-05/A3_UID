@@ -154,6 +154,13 @@ body{
     padding-right: 3vw;
     background-color: var(--website-white);
 }
+
+.categories {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vw;
+
+}
 .featured-title{
     font-size:58px;
     margin: 0.2rem;
@@ -163,6 +170,25 @@ body{
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
+}
+
+.categories-grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding:10px;
+    gap: 15px 60px
+}
+.category-card{
+    background: whitesmoke;
+    border: 2px solid var(--website-green);
+    padding: 20px;
+    box-shadow: inset;
+
+}
+.category-card img{
+    width: 100%;
+    height:200px;
+    object-fit: contain;
 }
 .featured-column{
     display: flex;
