@@ -250,6 +250,30 @@ body{
     white-space: nowrap;
 }
 
+.footer{
+    margin-top:40px;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    background-color: var(--website-green);
+}
+.footer-title{
+    color:var(--website-white);
+    padding-top: 40px;
+    padding-bottom:20px;
+    text-align:center;
+    font-size: 32px;
+}
+.footer-link-container{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.footer-link{
+    color:var(--website-white);
+    text-decoration: none;
+    font-size: 24px;
+}
 
 @media (max-width: 400px) {
     .navbar {
