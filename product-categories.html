@@ -4,8 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <h1>prod cat</h1>
+        <nav class="navbar">
+        <div class="navbar-logo">
+            <button class="nav-btn" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div class="navbar-title" onclick="window.location.href='/index'">Cricket HQ</div>
+        <div class="navbar-actions">
+            <button class="nav-btn" aria-label="Search">
+                <i style="height:20x"class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="nav-btn" aria-label="Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+        </div>
+    </nav>
+    <section class="product-header">
+        <h3 class="shop-by-text">SHOP BY CATEGORY</h3>
+        <h2 class="product-title">PRODUCT CATEGORIES</h2>
+        <div class="breadcrumb-nav">
+            <a class="breadcrumb-link" href="index.html">HOME</a>
+            <a class="breadcrumb-link">></a>
+            <a href="product-categories.html" class="breadcrumb-link">PRODUCT CATEGORIES</a>
+        </div>
+    </section>
+    <section class="products">
+        <div class="product-categories-grid">
+            <a class="product-categories-card" href="products.html?type=bats">       
+                <img src="/assets/pngimg.com - cricket_PNG27.png">
+                <h3>BATS</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=gloves">       
+                <img src="/assets/pngimg.com - cricket_PNG27.png">
+                <h3>GLOVES</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=shoes">       
+                <img src="/assets/pngimg.com - cricket_PNG27.png">
+                <h3>SHOES</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=helmets">       
+                <img src="/assets/pngimg.com - cricket_PNG27.png">
+                <h3>HELMETS</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=pads">       
+                <img src="/assets/pngimg.com - cricket_PNG27.png">
+                <h3>PADS</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=bags">       
+                <img src="/assets/pngimg.com - cricket_PNG27.png">
+                <h3>BAGS</h3>
+            </a>            
+        </div>
+    </section>
+    <section class="footer">
+        <h3 class="footer-title">CRICKET-HQ</h3>
+        <div class="footer-link-container">
+            <a class="footer-link" href="index.html">HOME</a>
+            <a class="footer-link" href="product-categories.html">PRODUCT</a>
+            <a class="footer-link" href="cart.html">CART</a>
+            <a class="footer-link" href="about-us.html">ABOUT US</a>
+        </div>
+
+    </section>    
 </body>
 </html>
