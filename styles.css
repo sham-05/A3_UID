@@ -12,6 +12,11 @@
 body{
     background-color: var(--website-white);
 }
+section{
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 3vw;
+}
 .navbar {
     display: flex;
     align-items: center;
@@ -330,13 +335,29 @@ body{
 
 }
 
+#top-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    border-top: 3px solid var(--website-green);
+    border-bottom: 3px solid var(--website-green);
+    border-radius: 0 0 50% 50% / 0 0 30px 30px;
+    overflow: hidden;
+}
+
+.top_img {
+    max-height: 320px;
+    width: auto;
+    object-fit: contain;
+}
+
 .product-categories-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding:10px;
     gap: 15px 60px
 }
-
 
 @media (max-width: 400px) {
     .navbar {
