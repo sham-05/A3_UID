@@ -282,7 +282,7 @@ section{
 }
 
 .product-header{
-    margin-top: 40px;
+    margin-top: 3;
     padding-left: 3vh;
     padding-right: 3vh;
 }
@@ -359,18 +359,169 @@ section{
     gap: 15px 60px
 }
 
-@media (max-width: 400px) {
-    .navbar {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 10px 16px;
-        gap: 8px;
+.filter-products-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 0 3vw 3vw;
+    margin-top: 2vw;
+}
+
+.filter-products-layout .filter-box {
+    flex: 0 0 300px;
+    margin: 0;
+    width: auto;
+}
+
+.filter-products-layout .product-categories-grid {
+    flex: 1;
+    padding: 10px 0;
+}
+
+.filter-box {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    padding: 24px;
+    margin: 3vh;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    width: 360px;
+}
+
+.filter-section {
+    margin-bottom: 24px;
+}
+
+.filter-section:last-child {
+    margin-bottom: 0;
+}
+
+.filter-section-title {
+    color: var(--website-green);
+    font-size: 22px;
+    font-weight: 900;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 8px;
+}
+
+.filter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1.5px solid var(--website-green);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.filter-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--website-green);
+    cursor: pointer;
+}
+
+.size-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.size-btn {
+    padding: 8px 18px;
+    border: 2px solid #111;
+    border-radius: 50px;
+    background: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.size-btn:hover {
+    background: var(--website-green);
+    color: #fff;
+}
+
+.price-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--website-green);
+    cursor: pointer;
+}
+
+@media (max-width: 400px){
+
+    /* --- Hero: smaller text so "CREASE" isn't clipped, image fills better --- */
+    .hero-section {
+        height: 80vh;
     }
 
-    .navbar-title {
-        order: -1;
-        flex: 0 0 100%;
-        text-align: center;
-        cursor:pointer;
+    .hero-word {
+        font-size: 62px;
+    }
+
+    /* Transforms text down slightly for mobile breakpoint */
+    .hero-text {
+        margin-top: 120px;
+    }
+
+    /* single column, shorter images*/
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-title{
+    font-size:50px;
+    margin: 0.2rem;
+    color: var(--website-green);
+}
+
+    .featured-card img {
+        height: 120px;
+    }
+
+    .featured-card--large img {
+        height: 140px;
+    }
+
+    /* for mobile, categories are two columns only */
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    /* reduce image size of product categories
+    for mobile breakpoint  */
+    .category-card img {
+        height: 90px;
+    }
+    .product-categories-grid {
+        gap: 20px;
+    }
+
+    .product-categories-card img {
+        height: 130px;
+    }
+
+    .footer-link-container{
+        /* Wrap elements in footer onto new row  */
+        flex-wrap: wrap;
+        /* create gap between rows*/
+        row-gap: 16px;
+    }
+
+    .footer-title {
+        padding-bottom: 8px;
     }
 }
