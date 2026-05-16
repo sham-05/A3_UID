@@ -4,19 +4,22 @@
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --website-white: #F5F0E8;
     --website-green: #00843D;
 
 }
-body{
+
+body {
     background-color: var(--website-white);
 }
-section{
+
+section {
     padding-left: 3vw;
     padding-right: 3vw;
     padding-top: 3vw;
 }
+
 .navbar {
     display: flex;
     align-items: center;
@@ -25,9 +28,9 @@ section{
     padding: 0 24px;
     height: 64px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    position:sticky;
+    position: sticky;
     top: 0;
-    z-index:1;
+    z-index: 1;
 }
 
 .navbar-logo {
@@ -37,7 +40,7 @@ section{
 }
 
 .navbar-logo h1 {
-    color:#000000
+    color: #000000
 }
 
 .navbar-title {
@@ -48,7 +51,7 @@ section{
     color: #000000;
     letter-spacing: 1px;
     white-space: nowrap;
-    cursor:pointer;
+    cursor: pointer;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
@@ -83,7 +86,7 @@ section{
 
 .hero-section {
     position: relative;
-    background-color: var(--website-white);
+    background: linear-gradient(135deg, var(--website-white) 10%, var(--website-green) 100%);
     height: 90vh;
     overflow: hidden;
 }
@@ -96,6 +99,7 @@ section{
     object-fit: contain;
     object-position: 60%;
     z-index: 0;
+    filter: drop-shadow(10px 10px 15px);
 }
 
 .hero-content {
@@ -114,7 +118,7 @@ section{
 }
 
 .hero-word {
-    font-size:108px;
+    font-size: 108px;
     font-weight: 900;
     color: #111;
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -167,71 +171,81 @@ section{
     padding-top: 3vw;
 
 }
-.featured-title{
-    font-size:58px;
+
+.featured-title {
+    font-size: 58px;
     margin: 0.2rem;
     color: var(--website-green);
 }
-.featured-grid{
+
+.featured-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
 }
 
-.categories-grid{
+.categories-grid {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding:10px;
+    padding: 10px;
     gap: 15px 60px
 }
-.category-card{
+
+.category-card {
     background: whitesmoke;
     border: 2px solid var(--website-green);
     padding: 20px;
-    box-shadow: inset;
+    filter: drop-shadow(2px 2px 5px);
 
 }
-.category-card img{
+
+.category-card img {
     width: 100%;
-    height:200px;
+    height: 200px;
     object-fit: contain;
 }
-.featured-column{
+
+.featured-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.featured-card{
-    padding:20px;
+
+.featured-card {
+    padding: 20px;
     border: 2px solid var(--website-green);
     background: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: inset;
-
-}
-.featured-card img{
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
+    filter: drop-shadow(2px 2px 5px);
 }
 
-.featured-card--large img{
+.featured-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.featured-card--large img {
     height: 550px;
 }
-.card-info{
+
+.card-info {
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-top: auto;
 }
+
 .card-info h3 {
-  font-size: 28px;
-  margin: 10px 0;
+    font-size: 28px;
+    margin: 10px 0;
 }
+
 .old-price {
-  text-decoration: line-through;
-  color: gray;
+    text-decoration: line-through;
+    color: gray;
 }
+
 .new-price {
     color: var(--website-green);
     font-size: 24px;
@@ -256,32 +270,35 @@ section{
     white-space: nowrap;
 }
 
-.footer{
-    margin-top:40px;
+.footer {
+    margin-top: 40px;
     padding-left: 3vh;
     padding-right: 3vh;
     background-color: var(--website-green);
 }
-.footer-title{
-    color:var(--website-white);
+
+.footer-title {
+    color: var(--website-white);
     padding-top: 40px;
-    padding-bottom:20px;
-    text-align:center;
+    padding-bottom: 20px;
+    text-align: center;
     font-size: 32px;
 }
-.footer-link-container{
-    display:flex;
+
+.footer-link-container {
+    display: flex;
     justify-content: space-between;
     padding: 10px;
 
 }
-.footer-link{
-    color:var(--website-white);
+
+.footer-link {
+    color: var(--website-white);
     text-decoration: none;
     font-size: 24px;
 }
 
-.product-header{
+.product-header {
     margin-top: 3;
     padding-left: 3vh;
     padding-right: 3vh;
@@ -290,48 +307,50 @@ section{
 .product-header h3 {
     color: var(--website-green);
 }
+
 .product-header h2 {
     font-size: 52px;
 }
-.breadcrumb-nav{
-    display:flex;
-    justify-content:flex-start;
-    gap:10px;
+
+.breadcrumb-nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
 
 }
 
-.breadcrumb-link{
+.breadcrumb-link {
     color: var(--website-green);
-    text-decoration:none;
-}
-
-.products{
-    margin-top:40px;
-    padding: 0 3vh 0 3vh;
-}
-
-.product-categories-card{
-    background: #fff;
-    border: 2px solid var(--website-green);
-    padding: 2px;
-    box-shadow: inset;
-    border-radius: 16px;
-    overflow:hidden;
     text-decoration: none;
 }
 
-.product-categories-card img{
+.products {
+    margin-top: 40px;
+    padding: 0 3vh 0 3vh;
+}
+
+.product-categories-card {
+    background: #fff;
+    border: 2px solid var(--website-green);
+    padding: 2px;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 75));
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.product-categories-card img {
     width: 100%;
-    height:250px;
+    height: 250px;
     object-fit: contain;
     padding: 10px 0 10px 0;
     background-color: whitesmoke;
 
 }
 
-.product-categories-card h3{
+.product-categories-card h3 {
     padding: 10px 0 15px 30px;
-    color:#000;
+    color: #000;
 
 }
 
@@ -352,10 +371,10 @@ section{
     object-fit: contain;
 }
 
-.product-categories-grid{
+.product-categories-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding:10px;
+    padding: 10px;
     gap: 15px 60px
 }
 
@@ -460,7 +479,7 @@ input[type="range"] {
     cursor: pointer;
 }
 
-@media (max-width: 400px){
+@media (max-width: 400px) {
 
     /* --- Hero: smaller text so "CREASE" isn't clipped, image fills better --- */
     .hero-section {
@@ -481,11 +500,11 @@ input[type="range"] {
         grid-template-columns: 1fr;
     }
 
-    .featured-title{
-    font-size:50px;
-    margin: 0.2rem;
-    color: var(--website-green);
-}
+    .featured-title {
+        font-size: 50px;
+        margin: 0.2rem;
+        color: var(--website-green);
+    }
 
     .featured-card img {
         height: 120px;
@@ -506,6 +525,7 @@ input[type="range"] {
     .category-card img {
         height: 90px;
     }
+
     .product-categories-grid {
         gap: 20px;
     }
@@ -514,7 +534,7 @@ input[type="range"] {
         height: 130px;
     }
 
-    .footer-link-container{
+    .footer-link-container {
         /* Wrap elements in footer onto new row  */
         flex-wrap: wrap;
         /* create gap between rows*/
