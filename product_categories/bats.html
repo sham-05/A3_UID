@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <link rel="stylesheet" href="/styles.css">                       
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
             <button class="nav-btn" aria-label="Menu">
-            <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
         <div class="navbar-title">Cricket HQ</div>
         <div class="navbar-actions">
             <button class="nav-btn" aria-label="Search">
-                <i style="height:20x"class="fa-solid fa-magnifying-glass"></i>
+                <i style="height:20x" class="fa-solid fa-magnifying-glass"></i>
             </button>
             <button class="nav-btn" aria-label="Cart">
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -25,86 +27,87 @@
         </div>
     </nav>
     <section id="top-image">
-            <img class="top_img" src="/assets/bat.png">
+        <img class="top_img" src="/assets/bat.png">
     </section>
-        <section class="product-header">
-            <h3>SHOP BY CATEGORY</h3>
-            <h2>BATS</h2>
-            <div class="breadcrumb-nav">
-                <a class="breadcrumb-link" href="/index.html">HOME</a>
-                <a class="breadcrumb-link">></a>
-                <a class="breadcrumb-link" href="/product-categories.html">PRODUCT CATEGORIES</a>
-                <a class="breadcrumb-link">></a>
-                <a class="breadcrumb-link" href="bats.html">BATS</a>
-            </div>
-        </section>
-    
+    <section class="product-header">
+        <h3>SHOP BY CATEGORY</h3>
+        <h2>BATS</h2>
+        <div class="breadcrumb-nav">
+            <a class="breadcrumb-link" href="/index.html">HOME</a>
+            <a class="breadcrumb-link">></a>
+            <a class="breadcrumb-link" href="/product-categories.html">PRODUCT CATEGORIES</a>
+            <a class="breadcrumb-link">></a>
+            <a class="breadcrumb-link" href="bats.html">BATS</a>
+        </div>
+    </section>
+
     <div class="filter-products-layout">
-    <div class="filter-box">
-        <div class="filter-section">
-            <h3 class="filter-section-title">BRANDS</h3>
-            <div class="filter-item">
-                <label>KOOKABURRA</label>
-                <input type="checkbox">
+        <div class="filter-box">
+            <div class="filter-section">
+                <h3 class="filter-section-title">BRANDS</h3>
+                <div class="filter-item">
+                    <label>KOOKABURRA</label>
+                    <input type="checkbox">
+                </div>
+                <div class="filter-item">
+                    <label>GRAY-NICOLLS</label>
+                    <input type="checkbox">
+                </div>
+                <div class="filter-item">
+                    <label>MRF</label>
+                    <input type="checkbox">
+                </div>
+                <div class="filter-item">
+                    <label>SG</label>
+                    <input type="checkbox">
+                </div>
             </div>
-            <div class="filter-item">
-                <label>GRAY-NICOLLS</label>
-                <input type="checkbox">
+            <div class="filter-section">
+                <h3 class="filter-section-title">BAT SIZE</h3>
+                <div class="size-grid">
+                    <button class="size-btn">SH</button>
+                    <button class="size-btn">LH</button>
+                    <button class="size-btn">SIZE 6</button>
+                    <button class="size-btn">SIZE 5</button>
+                    <button class="size-btn">HARROW</button>
+                </div>
             </div>
-            <div class="filter-item">
-                <label>MRF</label>
-                <input type="checkbox">
-            </div>
-            <div class="filter-item">
-                <label>SG</label>
-                <input type="checkbox">
+            <div class="filter-section">
+                <h3 class="filter-section-title">PRICE</h3>
+                <input type="range" min="50" max="400" value="50">
+                <div class="price-range-labels">
+                    <span>$50</span>
+                    <span>$400</span>
+                </div>
             </div>
         </div>
-        <div class="filter-section">
-            <h3 class="filter-section-title">BAT SIZE</h3>
-            <div class="size-grid">
-                <button class="size-btn">SH</button>
-                <button class="size-btn">LH</button>
-                <button class="size-btn">SIZE 6</button>
-                <button class="size-btn">SIZE 5</button>
-                <button class="size-btn">HARROW</button>
-            </div>
+        <div class="product-categories-grid">
+            <a class="product-categories-card" href="/item-description.html">
+                <img src="/assets/bat.png">
+                <h3>BATS</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=gloves">
+                <img src="/assets/bat.png">
+                <h3>GLOVES</h3>
+            </a>
+            <a class="product-categories-card" href="/product_categories/shoes.html">
+                <img src="/assets/bat.png">
+                <h3>SHOES</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=helmets">
+                <img src="/assets/bat.png">
+                <h3>HELMETS</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=pads">
+                <img src="/assets/bat.png">
+                <h3>PADS</h3>
+            </a>
+            <a class="product-categories-card" href="products.html?type=bags">
+                <img src="/assets/bat.png">
+                <h3>BAGS</h3>
+            </a>
         </div>
-        <div class="filter-section">
-            <h3 class="filter-section-title">PRICE</h3>
-            <input type="range" min="50" max="400" value="50">
-            <div class="price-range-labels">
-                <span>$50</span>
-                <span>$400</span>
-            </div>
-        </div>
-    </div>
-    <div class="product-categories-grid">
-        <a class="product-categories-card" href="/product_categories/bats.html">       
-            <img src="/assets/bat.png">
-            <h3>BATS</h3>
-        </a>
-        <a class="product-categories-card" href="products.html?type=gloves">       
-            <img src="/assets/bat.png">
-            <h3>GLOVES</h3>
-        </a>
-        <a class="product-categories-card" href="/product_categories/shoes.html">       
-            <img src="/assets/bat.png">
-            <h3>SHOES</h3>
-        </a>
-        <a class="product-categories-card" href="products.html?type=helmets">       
-            <img src="/assets/bat.png">
-            <h3>HELMETS</h3>
-        </a>
-        <a class="product-categories-card" href="products.html?type=pads">       
-            <img src="/assets/bat.png">
-            <h3>PADS</h3>
-        </a>
-        <a class="product-categories-card" href="products.html?type=bags">       
-            <img src="/assets/bat.png">
-            <h3>BAGS</h3>
-        </a>
-    </div>
     </div>
 </body>
+
 </html>
