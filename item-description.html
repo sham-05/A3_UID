@@ -21,11 +21,30 @@
             <button class="nav-btn" aria-label="Search">
                 <i style="height:20x" class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <button class="nav-btn" aria-label="Cart">
+            <button class="nav-btn" aria-label="Cart" onclick="openCart()">
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
         </div>
     </nav>
+    <section class="breadcrumb">
+        <div class="breadcrumb-nav">
+            <a class="breadcrumb-link" href="index.html">HOME</a>
+            <a class="breadcrumb-link">></a>
+            <a href="product-categories.html" class="breadcrumb-link">PRODUCT CATEGORIES</a>
+            <a class="breadcrumb-link">></a>
+            <a href="product-categories.html" class="breadcrumb-link">BATS</a>
+            <a class="breadcrumb-link">></a>
+            <a href="product-categories.html" class="breadcrumb-link">KOOKABURRA KICKS 360</a>
+        </div>
+    </section>
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2 class="cart-title">My Cart</h2>
+            <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+    </div>
     <section>
         <div class="item-grid">
             <div class="item-card-large">
@@ -98,13 +117,23 @@
             <p>BREATHABLE LINING</p>
             <p>FOAM MIDSOLE</p>
         </div>
-        <button class="btn btn-primary item-add-to-cart">ADD TO CART</button>
+    </section>
+    <section class="cart-buttons">
+        <button class="btn btn-primary item-add-to-cart"
+            onclick="addToCart('KOOKABURRA KICKS 360', '$199.00', '/assets/bat.png')">ADD TO CART</button>
+        <div class="quantitySelector">
+            <button class="reduceQty" onclick="reduceQty()">-</button>
+            <p id="cart-qty">1</p>
+            <button class="increaseQty" onclick="increaseQty()">+</button>
+        </div>
+
     </section>
 
+    <script src="/cart.js"></script>
     <script>
 
-        /* 
-        This logic handles switching between description and specification tabs by 
+        /*
+        This logic handles switching between description and specification tabs
 
         */
         function switchTab(btn, tabId) {

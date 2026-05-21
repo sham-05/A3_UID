@@ -1,0 +1,241 @@
+@media (prefers-reduced-motion: no-preference) {
+
+    /* Drops element in from above - navbar load */
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Pop element up from half its size — used for the site title */
+    @keyframes scaleSpring {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Rise elements up and fade in — hero text and buttons */
+    @keyframes fadeUp {
+        from {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Slide element in from the right and scale-up — used for the hero image */
+    @keyframes slideInRight {
+        from {
+            transform: translateX(80px) scale(0.9);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* Slowly drifts the background grid diagonally — creates a subtle motion on the hero */
+    @keyframes gridMove {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: 60px 60px;
+        }
+    }
+
+    /* green spotlight*/
+    @keyframes spotlightPulse {
+
+        0%,
+        100% {
+            transform: translateY(-50%) scale(1);
+            opacity: 0.7;
+        }
+
+        50% {
+            transform: translateY(-50%) scale(1.15);
+            opacity: 1;
+        }
+    }
+
+    /* ── Entry animations ────────────────────────────────────── */
+
+    .navbar {
+        animation: slideDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .navbar-title {
+        animation: scaleSpring 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+    }
+
+    .hero-word:nth-child(1) {
+        animation: fadeUp 0.7s ease-out 0.65s both;
+    }
+
+    .hero-word:nth-child(2) {
+        animation: fadeUp 0.7s ease-out 0.75s both;
+    }
+
+    /* Entry fade up */
+    .hero-word:nth-child(3) {
+        animation: fadeUp 0.7s ease-out 0.85s both;
+    }
+
+    .hero-buttons {
+        animation: fadeUp 0.7s ease-out 1.05s both;
+    }
+
+    .hero-img {
+        animation: slideInRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+        /* raised above overlays */
+        z-index: 2;
+    }
+
+    .hero-content {
+        z-index: 3;
+    }
+
+    /* Subtle moving grid overlay */
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background-image:
+            repeating-linear-gradient(0deg,
+                transparent,
+                transparent 59px,
+                rgba(255, 255, 255, 0.04) 60px),
+            repeating-linear-gradient(90deg,
+                transparent,
+                transparent 59px,
+                rgba(255, 255, 255, 0.04) 60px);
+        animation: gridMove 20s linear infinite;
+    }
+
+    /* Pulsing spotlight behind player */
+    .hero-section::after {
+        content: '';
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        width: 50vw;
+        height: 80vh;
+        background: radial-gradient(ellipse at center,
+                rgba(0, 132, 61, 0.25) 0%,
+                transparent 70%);
+        z-index: 1;
+        pointer-events: none;
+        animation: spotlightPulse 4s ease-in-out infinite;
+    }
+
+    /* Hover micro-interactions */
+
+    .btn {
+        /* smoothens pop up transition */
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+
+        /* Bring button up and add shadow on hover */
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 132, 61, 0.5);
+    }
+
+    .btn-secondary:hover {
+        /* Bring button up and add shadow on hover */
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(17, 17, 17, 0.5);
+    }
+
+    .btn:active {
+        /* When pressed, button returns to flat. creates a "click" sensation */
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    /* Shimmer sweep on show now button */
+    .btn-primary {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-primary::before {
+        content: '';
+        position: absolute;
+        inset: 0 auto 0 -100%;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+        transition: left 0.4s ease;
+    }
+
+    .btn-primary:hover::before {
+        left: 100%;
+    }
+
+
+    /* Navbar icons - scale + green tint */
+    .nav-btn i {
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-btn:hover i {
+        transform: scale(1.2);
+        color: #00843D;
+    }
+
+    /* Product category card */
+
+    .product-categories-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-categories-card::before {
+        content: '';
+        position: absolute;
+        inset: 0 auto 0 -100%;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+        transition: left 0.4s ease;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .product-categories-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 132, 61, 0.5);
+    }
+
+    .product-categories-card:hover::before {
+        left: 100%;
+    }
+
+    .product-categories-card:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+}

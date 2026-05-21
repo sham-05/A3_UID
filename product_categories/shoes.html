@@ -19,13 +19,21 @@
             <button class="nav-btn" aria-label="Search">
                 <i style="height:20x"class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <button class="nav-btn" aria-label="Cart">
+            <button class="nav-btn" aria-label="Cart" onclick="openCart()">
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
         </div>
     </nav>
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2 class="cart-title">My Cart</h2>
+            <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+    </div>
     <section id="top-image">
-            <img class="top_img" src="/assets/bat.png">
+            <img class="top_img" src="/assets/shoes.png">
     </section>
         <section class="product-header">
             <h3>SHOP BY CATEGORY</h3>
@@ -80,31 +88,32 @@
         </div>
     </div>
     <div class="product-categories-grid">
-        <a class="product-categories-card" href="/product_categories/bats.html">       
+        <a class="product-categories-card" href="/product_categories/bats.html">
             <img src="/assets/bat.png">
             <h3>BATS</h3>
         </a>
-        <a class="product-categories-card" href="products.html?type=gloves">       
-            <img src="/assets/bat.png">
+        <a class="product-categories-card" href="products.html?type=gloves">
+            <img src="/assets/gloves.png">
             <h3>GLOVES</h3>
         </a>
-        <a class="product-categories-card" href="/product_categories/shoes.html">       
-            <img src="/assets/bat.png">
+        <a class="product-categories-card" href="/product_categories/shoes.html">
+            <img src="/assets/shoes.png">
             <h3>SHOES</h3>
         </a>
-        <a class="product-categories-card" href="products.html?type=helmets">       
+        <a class="product-categories-card" href="products.html?type=helmets">
             <img src="/assets/bat.png">
             <h3>HELMETS</h3>
         </a>
-        <a class="product-categories-card" href="products.html?type=pads">       
-            <img src="/assets/bat.png">
+        <a class="product-categories-card" href="products.html?type=pads">
+            <img src="/assets/pads.png">
             <h3>PADS</h3>
         </a>
-        <a class="product-categories-card" href="products.html?type=bags">       
-            <img src="/assets/bat.png">
+        <a class="product-categories-card" href="products.html?type=bags">
+            <img src="/assets/bag.png">
             <h3>BAGS</h3>
         </a>
     </div>
     </div>
+    <script src="/cart.js"></script>
 </body>
 </html>

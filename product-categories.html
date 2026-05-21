@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-        <nav class="navbar">
+    <nav class="navbar">
         <div class="navbar-logo">
             <button class="nav-btn" aria-label="Menu">
-            <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
         <div class="navbar-title" onclick="window.location.href='/index'">Cricket HQ</div>
         <div class="navbar-actions">
             <button class="nav-btn" aria-label="Search">
-                <i style="height:20x"class="fa-solid fa-magnifying-glass"></i>
+                <i style="height:20x" class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <button class="nav-btn" aria-label="Cart">
+            <button class="nav-btn" aria-label="Cart" onclick="openCart()">
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
         </div>
     </nav>
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2 class="cart-title">My Cart</h2>
+            <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+    </div>
     <section class="product-header">
         <h3 class="shop-by-text">SHOP BY CATEGORY</h3>
         <h2 class="product-title">PRODUCT CATEGORIES</h2>
@@ -35,30 +46,30 @@
     </section>
     <section class="products">
         <div class="product-categories-grid">
-            <a class="product-categories-card" href="/product_categories/bats.html">       
+            <a class="product-categories-card" href="/product_categories/bats.html">
                 <img src="/assets/bat.png">
                 <h3>BATS</h3>
             </a>
-            <a class="product-categories-card" href="products.html?type=gloves">       
-                <img src="/assets/bat.png">
+            <a class="product-categories-card" href="products.html?type=gloves">
+                <img src="/assets/gloves.png">
                 <h3>GLOVES</h3>
             </a>
-            <a class="product-categories-card" href="/product_categories/shoes.html">       
-                <img src="/assets/bat.png">
+            <a class="product-categories-card" href="/product_categories/shoes.html">
+                <img src="/assets/shoes.png">
                 <h3>SHOES</h3>
             </a>
-            <a class="product-categories-card" href="products.html?type=helmets">       
+            <a class="product-categories-card" href="products.html?type=helmets">
                 <img src="/assets/bat.png">
                 <h3>HELMETS</h3>
             </a>
-            <a class="product-categories-card" href="products.html?type=pads">       
-                <img src="/assets/bat.png">
+            <a class="product-categories-card" href="products.html?type=pads">
+                <img src="/assets/pads.png">
                 <h3>PADS</h3>
             </a>
-            <a class="product-categories-card" href="products.html?type=bags">       
-                <img src="/assets/bat.png">
+            <a class="product-categories-card" href="products.html?type=bags">
+                <img src="/assets/bag.png">
                 <h3>BAGS</h3>
-            </a>            
+            </a>
         </div>
     </section>
     <section class="footer">
@@ -69,6 +80,8 @@
             <a class="footer-link" href="cart.html">CART</a>
             <a class="footer-link" href="about-us.html">ABOUT US</a>
         </div>
-    </section>    
+    </section>
+    <script src="cart.js"></script>
 </body>
+
 </html>

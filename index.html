@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cricket HQ</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
-            <button class="nav-btn" aria-label="Menu">
+            <button class="nav-btn" aria-label="Menu" onclick="openMenu()">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -21,11 +22,57 @@
             <button class="nav-btn" aria-label="Search">
                 <i style="height:20x" class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <button class="nav-btn" aria-label="Cart">
+            <button class="nav-btn" aria-label="Cart" onclick="openCart()">
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
         </div>
     </nav>
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-header">
+            <h2 class="menu-title">Menu</h2>
+            <button class="menu-close-btn" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="menu-items" id="menuItems">
+            <a class="menu-link" href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a class="menu-link" href="product-categories.html">
+                <i class="fa-solid fa-tag"></i>
+                <span>Products</span>
+            </a>
+            <a class="menu-link" href="cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Checkout</span>
+            </a>
+            <a class="menu-link" href="about-us.html">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Testimonials</span>
+            </a>
+            <a class="menu-link" href="about-us.html">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Coaching</span>
+            </a>
+            <a class="menu-link" href="about-us.html">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Net Hire</span>
+            </a>
+            <a class="menu-link" href="about-us.html">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About Us</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2 class="cart-title">My Cart</h2>
+            <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+    </div>
     <div class="hero-section">
         <img class="hero-img" src="/assets/pngimg.com - cricket_PNG133.png">
         <div class="hero-content">
@@ -41,11 +88,18 @@
         </div>
     </div>
     <section class="brands-banner">
-        <span class="brand-text">Gray Niccolls</span>
-        <span class="brand-text">Kookaburra</span>
-        <span class="brand-text">MRF</span>
-        <span class="brand-text">New Balance</span>
-        <span class="brand-text">Gunn &amp; Moore</span>
+        <div class="brands-track">
+            <span class="brand-text">Gray Niccolls</span>
+            <span class="brand-text">Kookaburra</span>
+            <span class="brand-text">MRF</span>
+            <span class="brand-text">New Balance</span>
+            <span class="brand-text">Gunn &amp; Moore</span>
+            <span class="brand-text">Gray Niccolls</span>
+            <span class="brand-text">Kookaburra</span>
+            <span class="brand-text">MRF</span>
+            <span class="brand-text">New Balance</span>
+            <span class="brand-text">Gunn &amp; Moore</span>
+        </div>
     </section>
 
     <section class="featured">
@@ -54,7 +108,7 @@
 
             <div class="featured-card featured-card--large">
                 <div class="card-info">
-                    <img src="/assets/bat.png">
+                    <img src="/assets/cricbats.png">
                     <h3> GRAY NICCOLS BAT </h3>
                     <p><span class="old-price">$299.00</span> <span class="new-price">$199.00</span></p>
                 </div>
@@ -69,9 +123,9 @@
                 </div>
                 <div class="featured-card">
                     <div class="card-info">
-                        <img src="/assets/bat.png">
-                        <h3> GRAY NICCOLS BAT </h3>
-                        <p><span class="old-price">$299.00</span> <span class="new-price">$199.00</span></p>
+                        <img src="/assets/shoes.png">
+                        <h3> NEW BALANCE SHOES </h3>
+                        <p><span class="old-price">$179.00</span> <span class="new-price">$129.00</span></p>
                     </div>
                 </div>
             </div>
@@ -85,11 +139,11 @@
                 <h3>BATS</h3>
             </div>
             <div class="category-card">
-                <img src="/assets/bat.png">
+                <img src="/assets/gloves.png">
                 <h3>GLOVES</h3>
             </div>
             <div class=" category-card">
-                <img src="/assets/bat.png">
+                <img src="/assets/shoes.png">
                 <h3>SHOES</h3>
             </div>
             <div class=" category-card">
@@ -97,16 +151,16 @@
                 <h3>HELMETS</h3>
             </div>
             <div class=" category-card">
-                <img src="/assets/bat.png">
+                <img src="/assets/pads.png">
                 <h3>PADS</h3>
             </div>
             <div class=" category-card">
-                <img src="/assets/bat.png">
+                <img src="/assets/bag.png">
                 <h3>BAGS</h3>
             </div>
         </div>
     </section>
-    <section class=" footer">
+    <footer class=" footer">
         <h3 class="footer-title">CRICKET-HQ</h3>
         <div class="footer-link-container">
             <a class="footer-link" href="index.html">HOME</a>
@@ -115,7 +169,8 @@
             <a class="footer-link" href="about-us.html">ABOUT US</a>
         </div>
 
-    </section>
+    </footer>
+    <script src="cart.js"></script>
 </body>
 
 </html>
