@@ -44,6 +44,13 @@
             <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-value" id="cartTotal"></span>
+            </div>
+            <button class="btn btn-primary cart-checkout-btn" onclick="window.location.href='/checkout.html'">Checkout</button>
+        </div>
     </div>
     <section class="item-header-section">
         <h1 class="featured-title">KOOKABURRA KICKS 360</h1>

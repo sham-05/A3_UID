@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="animations.css">
+    <title>Checkout — Cricket HQ</title>
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -17,16 +16,17 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
-        <div class="navbar-title" onclick="window.location.href='/index'">Cricket HQ</div>
+        <div class="navbar-title" onclick="window.location.href='/index.html'">Cricket HQ</div>
         <div class="navbar-actions">
             <button class="nav-btn" aria-label="Search">
-                <i style="height:20x" class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <button class="nav-btn" aria-label="Cart" onclick="openCart()">
                 <i class="fa-solid fa-cart-shopping"></i>
             </button>
         </div>
     </nav>
+
     <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
     <div class="cart-panel" id="cartPanel">
         <div class="cart-header">
@@ -43,43 +43,65 @@
                 onclick="window.location.href='/checkout.html'">Checkout</button>
         </div>
     </div>
-    <section class="product-header">
-        <h3 class="shop-by-text">SHOP BY CATEGORY</h3>
-        <h2 class="product-title">PRODUCT CATEGORIES</h2>
-        <div class="breadcrumb-nav">
-            <a class="breadcrumb-link" href="index.html">HOME</a>
-            <a class="breadcrumb-link">></a>
-            <a href="product-categories.html" class="breadcrumb-link">PRODUCT CATEGORIES</a>
+
+    <div class="checkout-layout">
+
+        <!-- Left: personal details form -->
+        <div class="checkout-form-card">
+            <button class="checkout-back-btn" onclick="history.back()">&#8249;</button>
+
+            <div class="checkout-stepper">
+                <div class="stepper-step">
+                    <div class="stepper-dot stepper-dot--active"></div>
+                    <span class="stepper-label stepper-label--active">Personal Info</span>
+                </div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step">
+                    <div class="stepper-dot"></div>
+                    <span class="stepper-label">Payment</span>
+                </div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step">
+                    <div class="stepper-dot"></div>
+                    <span class="stepper-label">Confirmation</span>
+                </div>
+            </div>
+
+            <h2 class="checkout-section-title">Personal Details</h2>
+
+            <form class="checkout-form" onsubmit="return false;">
+                <div class="form-field">
+                    <label class="form-label">Name</label>
+                    <input class="form-input" type="text" placeholder="Name">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Address</label>
+                    <input class="form-input" type="text" placeholder="Address">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Postal Code</label>
+                    <input class="form-input form-input--short" type="text" placeholder="Postal Code">
+                </div>
+                <button class="checkout-next-btn" type="submit"
+                    onclick="window.location.href='/checkout-payment.html'">NEXT</button>
+            </form>
         </div>
-    </section>
-    <section class="products">
-        <div class="product-categories-grid">
-            <a class="product-categories-card" href="/product_categories/bats.html">
-                <img src="/assets/bat.png">
-                <h3>BATS</h3>
-            </a>
-            <a class="product-categories-card" href="products.html?type=gloves">
-                <img src="/assets/gloves.png">
-                <h3>GLOVES</h3>
-            </a>
-            <a class="product-categories-card" href="/product_categories/shoes.html">
-                <img src="/assets/shoes.png">
-                <h3>SHOES</h3>
-            </a>
-            <a class="product-categories-card" href="products.html?type=helmets">
-                <img src="/assets/bat.png">
-                <h3>HELMETS</h3>
-            </a>
-            <a class="product-categories-card" href="products.html?type=pads">
-                <img src="/assets/pads.png">
-                <h3>PADS</h3>
-            </a>
-            <a class="product-categories-card" href="products.html?type=bags">
-                <img src="/assets/bag.png">
-                <h3>BAGS</h3>
-            </a>
+
+        <!-- Right: order summary -->
+        <div class="checkout-order-card">
+            <div class="mobile-order-header">
+                <span class="mobile-order-count" id="checkoutItemCount"></span>
+                <a href="/cart.html" class="mobile-order-edit">Edit</a>
+            </div>
+            <h2 class="checkout-order-title">Your Order</h2>
+            <div class="order-items-list" id="checkoutItems"></div>
+            <div class="checkout-subtotal">
+                <span class="checkout-subtotal-label">Total</span>
+                <span id="checkoutSubtotal"></span>
+            </div>
         </div>
-    </section>
+
+    </div>
     <footer class="footer">
         <div class="footer-main">
             <div class="footer-brand">
@@ -106,7 +128,8 @@
             <a href="#" class="footer-privacy">Privacy Policy</a>
         </div>
     </footer>
-    <script src="cart.js"></script>
+
+    <script src="/cart.js"></script>
 </body>
 
 </html>

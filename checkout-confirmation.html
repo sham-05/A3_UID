@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed — Cricket HQ</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <button class="nav-btn" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div class="navbar-title" onclick="window.location.href='/index.html'">Cricket HQ</div>
+        <div class="navbar-actions">
+            <button class="nav-btn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="nav-btn" aria-label="Cart" onclick="openCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2 class="cart-title">My Cart</h2>
+            <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-value" id="cartTotal"></span>
+            </div>
+            <button class="btn btn-primary cart-checkout-btn"
+                onclick="window.location.href='/checkout.html'">Checkout</button>
+        </div>
+    </div>
+
+    <div class="confirmation-page">
+
+        <!-- Success header -->
+        <div class="confirmation-header">
+            <div class="confirmation-badge">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h1 class="confirmation-title">Thanks for your order!</h1>
+            <button class="continue-btn" onclick="window.location.href='/index.html'">Continue shopping</button>
+        </div>
+
+        <!-- Order card -->
+        <div class="order-card">
+
+            <!-- Green header: order ID + action buttons -->
+            <div class="order-card-header">
+                <div class="order-card-header-left">
+                    <span class="order-id" id="orderId"></span>
+                    <div class="order-dates">
+                        <span id="orderDate"></span>
+                        <span class="estimated" id="estimatedDelivery"></span>
+                    </div>
+                </div>
+                <div class="order-card-header-actions">
+                    <button class="btn-invoice">Download Invoice</button>
+                    <button class="btn-track">Track order</button>
+                </div>
+            </div>
+
+            <!-- Items -->
+            <div class="order-items" id="confirmationItems"></div>
+
+            <!-- Payment / Address / Delivery -->
+            <div class="order-meta">
+                <div class="order-meta-col">
+                    <div class="order-meta-label">Payment method</div>
+                    <div class="order-meta-value">
+                        <span class="visa-badge">VISA</span> Visa ••••••9999
+                    </div>
+                </div>
+                <div class="order-meta-col">
+                    <div class="order-meta-label">Address</div>
+                    <div class="order-meta-value">123 Cricket Lane<br>Melbourne, VIC 3000</div>
+                </div>
+                <div class="order-meta-col">
+                    <div class="order-meta-label">Delivery method</div>
+                    <div class="order-meta-value">Express shipping (2–3 days)</div>
+                </div>
+            </div>
+
+            <!-- Help + cost breakdown -->
+            <div class="order-footer">
+                <div class="order-help">
+                    <div class="order-help-title">Need help?</div>
+                    <div class="order-help-link">
+                        <i class="fa-regular fa-envelope"></i> support@crickethq.com
+                    </div>
+                    <div class="order-help-link">
+                        <i class="fa-solid fa-phone"></i> +61 3 9000 0000
+                    </div>
+                </div>
+                <div class="order-costs">
+                    <div class="cost-row">
+                        <span>Item cost</span>
+                        <span id="costItems"></span>
+                    </div>
+                    <div class="cost-row">
+                        <span>Shipping cost</span>
+                        <span>$14.00</span>
+                    </div>
+                    <div class="cost-row">
+                        <span>Tax</span>
+                        <span id="costTax"></span>
+                    </div>
+                    <div class="cost-row cost-row--total">
+                        <span>Total Cost</span>
+                        <span id="costTotal"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/cart.js"></script>
+</body>
+
+</html>

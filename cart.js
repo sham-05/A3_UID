@@ -68,11 +68,13 @@ function removeFromCart(index) {
 function renderCart() {
     const cart = getCart();
     const container = document.getElementById('cartItems');
+    const footer = document.getElementById('cartFooter');
     if (!container) return;
 
     // Empty cart state
     if (cart.length === 0) {
         container.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
+        if (footer) footer.style.display = 'none';
         return;
     }
 
@@ -92,6 +94,15 @@ function renderCart() {
             </div>
         </div>
     `).join('');
+
+    if (footer) {
+        const total = cart.reduce((sum, item) => {
+            const price = parseFloat(String(item.price).replace(/[^0-9.]/g, ''));
+            return sum + (price * Number(item.qty));
+        }, 0);
+        document.getElementById('cartTotal').textContent = '$' + total.toFixed(2);
+        footer.style.display = 'flex';
+    }
 }
 
 function reduceQty() {
@@ -121,3 +132,136 @@ function setActiveMenuLink() {
 }
 
 document.addEventListener('DOMContentLoaded', setActiveMenuLink);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.featured-card');
+    const grid = document.querySelector('.featured-grid');
+
+    // assert that the grid isw there
+    if (!cards.length || !grid) return;
+
+    // alternate cards that slide in left and right
+    cards.forEach((card, i) => {
+        card.classList.add(i % 2 === 0 ? 'scroll-left' : 'scroll-right');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // trigger animations when scrolled
+            if (entry.isIntersecting) {
+                cards.forEach(card => card.classList.add('scroll-visible'));
+                observer.unobserve(grid);
+            }
+        });
+
+        // control speed of animation
+    }, { threshold: 0.6 });
+
+    observer.observe(grid);
+});
+
+
+// Confirmation page only — guard prevents crash on other pages
+if (document.getElementById('orderId')) {
+    const orderId = '2' + Math.floor(Math.random() * 9e13).toString().padStart(13, '0');
+    document.getElementById('orderId').textContent = 'Order ID : ' + orderId;
+
+    const now = new Date();
+    const fmt = d => d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+    const delivery = new Date(now);
+    delivery.setDate(delivery.getDate() + 7);
+    document.getElementById('orderDate').textContent = 'Order Date : ' + fmt(now);
+    document.getElementById('estimatedDelivery').textContent = 'Estimated delivery : ' + fmt(delivery);
+
+    const confirmCart = getCart();
+    const itemsEl = document.getElementById('confirmationItems');
+    let itemTotal = 0;
+    if (confirmCart.length === 0) {
+        itemsEl.innerHTML = '<p style="padding:24px 28px;color:#888;font-size:14px;">No items found.</p>';
+    } else {
+        itemsEl.innerHTML = confirmCart.map(item => {
+            const price = parseFloat(String(item.price).replace(/[^0-9.]/g, ''));
+            itemTotal += price * Number(item.qty);
+            return `
+                    <div class="order-item-row">
+                        <img class="order-item-thumb" src="${item.image}" alt="${item.name}">
+                        <span class="order-item-name">${item.name}</span>
+                        <div class="order-item-right">
+                            <div class="order-item-price">$${(price * Number(item.qty)).toFixed(2)}</div>
+                            <div class="order-item-qty">Qty: ${item.qty}</div>
+                        </div>
+                    </div>
+                `;
+        }).join('');
+    }
+
+    const shipping = 14;
+    const tax = itemTotal * 0.1;
+    const total = itemTotal + shipping + tax;
+    document.getElementById('costItems').textContent = '$' + itemTotal.toFixed(2);
+    document.getElementById('costTax').textContent = '$' + tax.toFixed(2);
+    document.getElementById('costTotal').textContent = '$' + total.toFixed(2);
+}
+
+function renderOrderItems() {
+    const cart = getCart();
+    const container = document.getElementById('checkoutItems');
+    const subtotalEl = document.getElementById('checkoutSubtotal');
+    const countEl = document.getElementById('checkoutItemCount');
+
+    if (cart.length === 0) {
+        container.innerHTML = '<p class="order-empty">Your cart is empty.</p>';
+        subtotalEl.textContent = '$0.00';
+        if (countEl) countEl.textContent = '0 Total Items';
+        return;
+    }
+
+    if (countEl) countEl.textContent = cart.length + ' Total Items';
+
+    let total = 0;
+    container.innerHTML = cart.map((item, i) => {
+        const price = parseFloat(String(item.price).replace(/[^0-9.]/g, ''));
+        total += price * Number(item.qty);
+        return `
+                    <div class="order-item">
+                        <img class="order-item-img" src="${item.image}" alt="${item.name}">
+                        <div class="order-item-info">
+                            <span class="order-item-name">${item.name}</span>
+                            <div class="order-item-controls">
+                                <div class="order-qty-pill">
+                                    <button onclick="changeOrderQty(${i}, -1)">&#8722;</button>
+                                    <span>${item.qty}</span>
+                                    <button onclick="changeOrderQty(${i}, 1)">&#43;</button>
+                                </div>
+                                <button class="order-remove-btn" onclick="removeOrderItem(${i})">
+                                    <i class="fa-solid fa-circle-minus"></i>
+                                </button>
+                            </div>
+                            <span class="order-item-price">${item.price}</span>
+                        </div>
+                    </div>
+                `;
+    }).join('');
+
+    subtotalEl.textContent = '$' + total.toFixed(2);
+}
+
+function changeOrderQty(index, delta) {
+    const cart = getCart();
+    const newQty = Number(cart[index].qty) + delta;
+    if (newQty < 1) return;
+    cart[index].qty = newQty;
+    saveCart(cart);
+    renderOrderItems();
+}
+
+function removeOrderItem(index) {
+    const cart = getCart();
+    cart.splice(index, 1);
+    saveCart(cart);
+    renderOrderItems();
+}
+
+if (document.getElementById('checkoutItems')) {
+    renderOrderItems();
+}

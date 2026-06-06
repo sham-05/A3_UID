@@ -78,14 +78,54 @@
         }
     }
 
+    /* Featured card scroll-in animations */
+
+    @keyframes cardSlideFromLeft {
+        from {
+            transform: translateX(-50px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes cardSlideFromRight {
+        from {
+            transform: translateX(50px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* Hidden state set by javascript before observing */
+    .featured-card.scroll-left,
+    .featured-card.scroll-right {
+        opacity: 0;
+    }
+
+    .featured-card.scroll-left.scroll-visible {
+        animation: cardSlideFromLeft 1.2s ease forwards;
+    }
+
+    .featured-card.scroll-right.scroll-visible {
+        animation: cardSlideFromRight 1.2s ease forwards;
+    }
+
     /* ── Entry animations ────────────────────────────────────── */
 
     .navbar {
-        animation: slideDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation: slideDown 0.6s ease both;
     }
 
     .navbar-title {
-        animation: scaleSpring 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+        animation: scaleSpring 0.8s ease 0.3s both;
     }
 
     .hero-word:nth-child(1) {

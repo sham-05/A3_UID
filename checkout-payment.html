@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment — Cricket HQ</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <button class="nav-btn" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div class="navbar-title" onclick="window.location.href='/index.html'">Cricket HQ</div>
+        <div class="navbar-actions">
+            <button class="nav-btn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="nav-btn" aria-label="Cart" onclick="openCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2 class="cart-title">My Cart</h2>
+            <button class="cart-close-btn" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total-row">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-value" id="cartTotal"></span>
+            </div>
+            <button class="btn btn-primary cart-checkout-btn"
+                onclick="window.location.href='/checkout.html'">Checkout</button>
+        </div>
+    </div>
+
+    <div class="checkout-layout">
+
+        <!-- Left: payment form -->
+        <div class="checkout-form-card">
+            <button class="checkout-back-btn" onclick="history.back()">&#8249;</button>
+
+            <div class="checkout-stepper">
+                <div class="stepper-step">
+                    <div class="stepper-dot stepper-dot--active"></div>
+                    <span class="stepper-label stepper-label--active">Personal Info</span>
+                </div>
+                <div class="stepper-line stepper-line--active"></div>
+                <div class="stepper-step">
+                    <div class="stepper-dot stepper-dot--active"></div>
+                    <span class="stepper-label stepper-label--active">Payment</span>
+                </div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step">
+                    <div class="stepper-dot"></div>
+                    <span class="stepper-label">Confirmation</span>
+                </div>
+            </div>
+
+            <h2 class="checkout-section-title">Payment Details</h2>
+
+            <form class="checkout-form" onsubmit="return false;">
+                <div class="form-field">
+                    <label class="form-label">Card Number</label>
+                    <input class="form-input" type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Name on Card</label>
+                    <input class="form-input" type="text" placeholder="Full Name">
+                </div>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label">Expiry</label>
+                        <input class="form-input" type="text" placeholder="MM / YY" maxlength="7">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">CVV</label>
+                        <input class="form-input" type="text" placeholder="CVV" maxlength="4">
+                    </div>
+                </div>
+                <button class="checkout-next-btn" type="submit"
+                    onclick="window.location.href='/checkout-confirmation.html'">PLACE ORDER</button>
+                <div class="pay-divider">
+                    <span>OR</span>
+                </div>
+                <button class="apple-pay-btn" type="button">
+                    <i class="fa-brands fa-apple"></i> Pay
+                </button>
+            </form>
+        </div>
+
+        <!-- Right: order summary -->
+        <div class="checkout-order-card">
+            <h2 class="checkout-order-title">Your Order</h2>
+            <div class="order-items-list" id="checkoutItems"></div>
+            <div class="checkout-subtotal">
+                <span>Subtotal</span>
+                <span id="checkoutSubtotal"></span>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <h3 class="footer-title">CRICKET HQ</h3>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-link-container">
+                <a class="footer-link" href="index.html">HOME</a>
+                <a class="footer-link" href="product-categories.html">PRODUCT</a>
+                <a class="footer-link" href="cart.html">CART</a>
+                <a class="footer-link" href="about-us.html">ABOUT US</a>
+                <a class="footer-link">TESTIMONIALS</a>
+                <a class="footer-link">COACHING</a>
+                <a class="footer-link">NET HIRE</a>
+                <a class="footer-link">HIRING</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copyright">&copy; 2024 Cricket HQ. All rights reserved.</span>
+            <a href="#" class="footer-privacy">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script src="/cart.js"></script>
+</body>
+
+</html>

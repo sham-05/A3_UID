@@ -88,35 +88,57 @@
                     <span>$400</span>
                 </div>
             </div>
+            <div class="filter-actions">
+                <button class="btn btn-primary" onclick="applyFilter()">Apply Filter</button>
+                <button class="btn btn-secondary" onclick="clearFilter()">Clear Filter</button>
+            </div>
         </div>
         <div class="product-categories-grid">
             <a class="product-categories-card" href="/item-description.html">
                 <img src="/assets/bat.png">
-                <h3>BATS</h3>
+                <h3>KOOKABURRA 360</h3>
             </a>
             <a class="product-categories-card" href="products.html?type=gloves">
-                <img src="/assets/gloves.png">
-                <h3>GLOVES</h3>
+                <img src="/assets/bat.png">
+                <h3>GRAY NICCOLS 1000</h3>
             </a>
             <a class="product-categories-card" href="/product_categories/shoes.html">
-                <img src="/assets/shoes.png">
-                <h3>SHOES</h3>
+                <img src="/assets/bat.png">
+                <h3>NIKE 100</h3>
             </a>
             <a class="product-categories-card" href="products.html?type=helmets">
                 <img src="/assets/bat.png">
-                <h3>HELMETS</h3>
+                <h3>KOOKABURRA SUPERSTART</h3>
             </a>
             <a class="product-categories-card" href="products.html?type=pads">
-                <img src="/assets/pads.png">
-                <h3>PADS</h3>
+                <img src="/assets/bat.png">
+                <h3>GRAY NICCOLS 200</h3>
             </a>
             <a class="product-categories-card" href="products.html?type=bags">
-                <img src="/assets/bag.png">
-                <h3>BAGS</h3>
+                <img src="/assets/bat.png">
+                <h3>GRAY NICCOLS 30</h3>
             </a>
         </div>
     </div>
     <script src="/cart.js"></script>
+    <script>
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', () => btn.classList.toggle('active'));
+        });
+
+        function applyFilter() {
+            const cards = document.querySelectorAll('.product-categories-card');
+            cards.forEach((card, i) => {
+                card.style.display = i < 2 ? '' : 'none';
+            });
+        }
+
+        function clearFilter() {
+            document.querySelectorAll('.product-categories-card').forEach(card => {
+                card.style.display = '';
+            });
+        }
+    </script>
 </body>
 
 </html>
