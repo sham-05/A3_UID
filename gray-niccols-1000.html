@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gray Nicolls 1000 — Cricket HQ</title>
-    <link rel="stylesheet" href="/A3_UID/styles.css">
-    <link rel="stylesheet" href="/A3_UID/item-description.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./item-description.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -17,7 +17,7 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
-        <div class="navbar-title" onclick="window.location.href='/A3_UID/index.html'">Cricket HQ</div>
+        <div class="navbar-title" onclick="window.location.href='./index.html'">Cricket HQ</div>
         <div class="navbar-actions">
             <button class="nav-btn" aria-label="Search">
                 <i style="height:20x" class="fa-solid fa-magnifying-glass"></i>
@@ -29,11 +29,11 @@
     </nav>
     <section class="breadcrumb">
         <div class="breadcrumb-nav">
-            <a class="breadcrumb-link" href="/A3_UID/index.html">HOME</a>
+            <a class="breadcrumb-link" href="./index.html">HOME</a>
             <a class="breadcrumb-link">></a>
-            <a href="/A3_UID/product-categories.html" class="breadcrumb-link">PRODUCT CATEGORIES</a>
+            <a href="./product-categories.html" class="breadcrumb-link">PRODUCT CATEGORIES</a>
             <a class="breadcrumb-link">></a>
-            <a href="/A3_UID/product_categories/bats.html" class="breadcrumb-link">BATS</a>
+            <a href="./product_categories/bats.html" class="breadcrumb-link">BATS</a>
             <a class="breadcrumb-link">></a>
             <a class="breadcrumb-link">GRAY NICOLLS 1000</a>
         </div>
@@ -51,7 +51,7 @@
                 <span class="cart-total-value" id="cartTotal"></span>
             </div>
             <button class="btn btn-primary cart-checkout-btn"
-                onclick="window.location.href='/A3_UID/checkout.html'">Checkout</button>
+                onclick="window.location.href='./checkout.html'">Checkout</button>
         </div>
     </div>
     <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
@@ -61,15 +61,15 @@
             <button class="menu-close-btn" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <ul class="menu-items" id="menuItems">
-            <li><a class="menu-link" href="/A3_UID/index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-            <li><a class="menu-link" href="/A3_UID/product-categories.html"><i
+            <li><a class="menu-link" href="./index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+            <li><a class="menu-link" href="./product-categories.html"><i
                     class="fa-solid fa-tag"></i><span>Products</span></a></li>
-            <li><a class="menu-link" href="/A3_UID/checkout.html"><i
+            <li><a class="menu-link" href="./checkout.html"><i
                     class="fa-solid fa-cart-shopping"></i><span>Checkout</span></a></li>
-            <li><a class="menu-link" href="/A3_UID/index.html"><i class="fa-solid fa-circle-info"></i><span>Testimonials</span></a></li>
-            <li><a class="menu-link" href="/A3_UID/index.html"><i class="fa-solid fa-circle-info"></i><span>Coaching</span></a></li>
-            <li><a class="menu-link" href="/A3_UID/index.html"><i class="fa-solid fa-circle-info"></i><span>Net Hire</span></a></li>
-            <li><a class="menu-link" href="/A3_UID/index.html"><i class="fa-solid fa-circle-info"></i><span>About Us</span></a></li>
+            <li><a class="menu-link" href="./index.html"><i class="fa-solid fa-circle-info"></i><span>Testimonials</span></a></li>
+            <li><a class="menu-link" href="./index.html"><i class="fa-solid fa-circle-info"></i><span>Coaching</span></a></li>
+            <li><a class="menu-link" href="./index.html"><i class="fa-solid fa-circle-info"></i><span>Net Hire</span></a></li>
+            <li><a class="menu-link" href="./index.html"><i class="fa-solid fa-circle-info"></i><span>About Us</span></a></li>
         </ul>
     </div>
     <section class="item-header-section">
@@ -77,15 +77,15 @@
         <div class="item-grid">
             <div class="item-card-large">
                 <div class="item-card">
-                    <img src="/A3_UID/assets/bat.png">
+                    <img src="./assets/bat.png">
                 </div>
             </div>
             <div class="item-card-small">
                 <div class="item-card">
-                    <img src="/A3_UID/assets/bat.png">
+                    <img src="./assets/bat.png">
                 </div>
                 <div class="item-card">
-                    <img src="/A3_UID/assets/bat.png">
+                    <img src="./assets/bat.png">
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@
 
     <section class="cart-buttons">
         <button class="btn btn-primary item-add-to-cart"
-            onclick="addToCart('GRAY NICOLLS 1000', '$449.00', '/A3_UID/assets/bat.png')">ADD TO CART</button>
+            onclick="addToCart('GRAY NICOLLS 1000', '$449.00', './assets/bat.png')">ADD TO CART</button>
         <div class="quantitySelector">
             <button class="reduceQty" onclick="reduceQty()">-</button>
             <p id="cart-qty">1</p>
@@ -143,8 +143,8 @@
         </div>
     </section>
 
-    <script src="/A3_UID/cart.js"></script>
-    <script src="/A3_UID/menu.js"></script>
+    <script src="./cart.js"></script>
+    <script src="./menu.js"></script>
     <script>
         function selectSize(btn) {
             document.querySelectorAll('.size-pill').forEach(p => p.classList.remove('size-pill--selected'));
