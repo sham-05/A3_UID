@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
-            <button class="nav-btn" aria-label="Menu">
+            <button class="nav-btn" aria-label="Menu" onclick="openMenu()">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -44,8 +44,26 @@
                 onclick="window.location.href='/checkout.html'">Checkout</button>
         </div>
     </div>
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-header">
+            <h2 class="menu-title">Menu</h2>
+            <button class="menu-close-btn" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="menu-items" id="menuItems">
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+            <li><a class="menu-link" href="/product-categories.html"><i
+                    class="fa-solid fa-tag"></i><span>Products</span></a></li>
+            <li><a class="menu-link" href="/checkout.html"><i
+                    class="fa-solid fa-cart-shopping"></i><span>Checkout</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Testimonials</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Coaching</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Net Hire</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>About Us</span></a></li>
+        </ul>
+    </div>
 
-    <div class="confirmation-page">
+    <main class="confirmation-page">
 
         <!-- Success header -->
         <div class="confirmation-header">
@@ -80,17 +98,17 @@
             <!-- Payment / Address / Delivery -->
             <div class="order-meta">
                 <div class="order-meta-col">
-                    <div class="order-meta-label">Payment method</div>
+                    <h4 class="order-meta-label">Payment method</h4>
                     <div class="order-meta-value">
                         <span class="visa-badge">VISA</span> Visa ••••••9999
                     </div>
                 </div>
                 <div class="order-meta-col">
-                    <div class="order-meta-label">Address</div>
-                    <div class="order-meta-value">123 Cricket Lane<br>Melbourne, VIC 3000</div>
+                    <h4 class="order-meta-label">Address</h4>
+                    <div class="order-meta-value">207 Bouverie St<br>Melbourne, VIC 3000</div>
                 </div>
                 <div class="order-meta-col">
-                    <div class="order-meta-label">Delivery method</div>
+                    <h4 class="order-meta-label">Delivery method</h4>
                     <div class="order-meta-value">Express shipping (2–3 days)</div>
                 </div>
             </div>
@@ -98,7 +116,7 @@
             <!-- Help + cost breakdown -->
             <div class="order-footer">
                 <div class="order-help">
-                    <div class="order-help-title">Need help?</div>
+                    <h3 class="order-help-title">Need help?</h3>
                     <div class="order-help-link">
                         <i class="fa-regular fa-envelope"></i> support@crickethq.com
                     </div>
@@ -116,7 +134,7 @@
                         <span>$14.00</span>
                     </div>
                     <div class="cost-row">
-                        <span>Tax</span>
+                        <span>Tax</span>ƒ
                         <span id="costTax"></span>
                     </div>
                     <div class="cost-row cost-row--total">
@@ -127,9 +145,11 @@
             </div>
 
         </div>
-    </div>
+    </main>
 
     <script src="/cart.js"></script>
+    <script src="/menu.js"></script>
+    <script src="/checkout.js"></script>
 </body>
 
 </html>

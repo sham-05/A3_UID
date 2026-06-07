@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
-            <button class="nav-btn" aria-label="Menu">
+            <button class="nav-btn" aria-label="Menu" onclick="openMenu()">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -44,8 +44,26 @@
                 onclick="window.location.href='/checkout.html'">Checkout</button>
         </div>
     </div>
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-header">
+            <h2 class="menu-title">Menu</h2>
+            <button class="menu-close-btn" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="menu-items" id="menuItems">
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+            <li><a class="menu-link" href="/product-categories.html"><i
+                    class="fa-solid fa-tag"></i><span>Products</span></a></li>
+            <li><a class="menu-link" href="/checkout.html"><i
+                    class="fa-solid fa-cart-shopping"></i><span>Checkout</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Testimonials</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Coaching</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Net Hire</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>About Us</span></a></li>
+        </ul>
+    </div>
 
-    <div class="checkout-layout">
+    <main class="checkout-layout">
 
         <!-- Left: payment form -->
         <div class="checkout-form-card">
@@ -89,14 +107,16 @@
                         <input class="form-input" type="text" placeholder="CVV" maxlength="4">
                     </div>
                 </div>
-                <button class="checkout-next-btn" type="submit"
-                    onclick="window.location.href='/checkout-confirmation.html'">PLACE ORDER</button>
-                <div class="pay-divider">
-                    <span>OR</span>
+                <div class="payment-actions">
+                    <button class="checkout-next-btn" type="submit"
+                        onclick="window.location.href='/checkout-confirmation.html'">PLACE ORDER</button>
+                    <div class="pay-divider">
+                        <span>OR</span>
+                    </div>
+                    <button class="apple-pay-btn" type="button">
+                        <i class="fa-brands fa-apple"></i> Pay
+                    </button>
                 </div>
-                <button class="apple-pay-btn" type="button">
-                    <i class="fa-brands fa-apple"></i> Pay
-                </button>
             </form>
         </div>
 
@@ -104,33 +124,47 @@
         <div class="checkout-order-card">
             <h2 class="checkout-order-title">Your Order</h2>
             <div class="order-items-list" id="checkoutItems"></div>
-            <div class="checkout-subtotal">
-                <span>Subtotal</span>
-                <span id="checkoutSubtotal"></span>
+            <div class="checkout-cost-breakdown">
+                <div class="cost-row">
+                    <span>Items</span>
+                    <span id="checkoutCostItems"></span>
+                </div>
+                <div class="cost-row">
+                    <span>Shipping</span>
+                    <span id="checkoutCostShipping"></span>
+                </div>
+                <div class="cost-row">
+                    <span>Tax (10%)</span>
+                    <span id="checkoutCostTax"></span>
+                </div>
+                <div class="cost-row cost-row--total">
+                    <span>Total</span>
+                    <span id="checkoutSubtotal"></span>
+                </div>
             </div>
         </div>
 
-    </div>
+    </main>
     <footer class="footer">
         <div class="footer-main">
             <div class="footer-brand">
                 <h3 class="footer-title">CRICKET HQ</h3>
-                <div class="footer-social">
-                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-icon" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
+                <ul class="footer-social">
+                    <li><a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#" class="social-icon" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
             </div>
-            <div class="footer-link-container">
-                <a class="footer-link" href="index.html">HOME</a>
-                <a class="footer-link" href="product-categories.html">PRODUCT</a>
-                <a class="footer-link" href="cart.html">CART</a>
-                <a class="footer-link" href="about-us.html">ABOUT US</a>
-                <a class="footer-link">TESTIMONIALS</a>
-                <a class="footer-link">COACHING</a>
-                <a class="footer-link">NET HIRE</a>
-                <a class="footer-link">HIRING</a>
-            </div>
+            <ul class="footer-link-container">
+                <li><a class="footer-link" href="index.html">HOME</a></li>
+                <li><a class="footer-link" href="product-categories.html">PRODUCT</a></li>
+                <li><a class="footer-link" href="checkout.html">CART</a></li>
+                <li><a class="footer-link" href="about-us.html">ABOUT US</a></li>
+                <li><a class="footer-link">TESTIMONIALS</a></li>
+                <li><a class="footer-link">COACHING</a></li>
+                <li><a class="footer-link">NET HIRE</a></li>
+                <li><a class="footer-link">HIRING</a></li>
+            </ul>
         </div>
         <div class="footer-bottom">
             <span class="footer-copyright">&copy; 2024 Cricket HQ. All rights reserved.</span>
@@ -139,6 +173,8 @@
     </footer>
 
     <script src="/cart.js"></script>
+    <script src="/menu.js"></script>
+    <script src="/checkout.js"></script>
 </body>
 
 </html>

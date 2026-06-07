@@ -142,6 +142,9 @@ section {
 .footer-social {
     display: flex;
     gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .social-icon {
@@ -170,6 +173,8 @@ section {
     text-align: left;
     padding-right: 10px;
     padding-top: 10px;
+    list-style: none;
+    margin: 0;
 }
 
 .footer-link {
@@ -494,6 +499,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    list-style: none;
+    margin: 0;
 }
 
 .menu-link {
@@ -523,7 +530,7 @@ section {
 }
 
 .menu-link--active {
-    background-color: #ebebeb;
+    background-color: rgba(0, 0, 0, 0.2);
     font-weight: 700;
 }
 

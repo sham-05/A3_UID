@@ -25,6 +25,8 @@
 .breadcrumb-link {
     color: var(--website-green);
     text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /*  Products Grid & Cards  */
@@ -35,13 +37,20 @@
 }
 
 .product-categories-card {
+    display: block;
     background: #fff;
     border: 3px solid var(--website-green);
-    padding: 2px;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 75));
     border-radius: 16px;
     overflow: hidden;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.product-categories-card--placeholder {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
 }
 
 .product-categories-card img {
@@ -53,10 +62,35 @@
 
 }
 
-.product-categories-card h3 {
-    padding: 10px 0 15px 30px;
-    color: #000;
+.card-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: var(--website-green);
+    opacity: 0.85;
+}
 
+.product-categories-card h3 {
+    font-size: 22px;
+    font-weight: 900;
+    color: white;
+    margin: 0;
+}
+
+.card-item-count {
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.card-price {
+    padding: 0 0 14px 30px;
+    color: var(--website-green);
+    font-size: 16px;
+    font-weight: 700;
 }
 
 #top-image {
@@ -174,12 +208,36 @@
     border-color: var(--website-green);
 }
 
+.price-range-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.price-range-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+}
+
+.price-range-max {
+    color: var(--website-green);
+    font-size: 22px;
+}
+
+.price-range-dash {
+    color: #bbb;
+    font-size: 16px;
+}
+
 .price-range-labels {
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
-    font-weight: 700;
-    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #aaa;
+    margin-top: 6px;
 }
 
 .filter-actions {
@@ -200,15 +258,138 @@ input[type="range"] {
     cursor: pointer;
 }
 
+/* Mobile filter button bar */
+
+.mobile-filter-bar {
+    display: none;
+    padding: 12px 16px 4px;
+}
+
+.mobile-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--website-green);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 22px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Filter bottom panel */
+
+.filter-panel-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 500;
+}
+
+.filter-panel-overlay--visible {
+    display: block;
+}
+
+.filter-panel-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+    padding: 12px 24px 36px;
+    z-index: 501;
+    max-height: 82vh;
+    overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.filter-panel-mobile--open {
+    transform: translateY(0);
+}
+
+.filter-panel-handle {
+    width: 40px;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+    margin: 0 auto 16px;
+}
+
+.filter-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.filter-panel-title {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--website-green);
+}
+
+.filter-panel-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    padding: 4px;
+}
+
+.card-item-price {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+
+}
+
 /* Mobile overrides (390×844). */
 
 @media (max-width: 400px) {
 
+    .filter-products-layout .filter-box {
+        display: none;
+    }
+
+    .filter-products-layout {
+        padding: 0 12px 16px;
+    }
+
+    .mobile-filter-bar {
+        display: block;
+    }
+
     .product-categories-grid {
-        gap: 20px;
+        gap: 12px;
     }
 
     .product-categories-card img {
         height: 130px;
+    }
+
+    .card-label {
+        padding: 10px 12px;
+    }
+
+    .product-categories-card h3 {
+        font-size: 11px;
+    }
+
+    .card-item-count {
+        font-size: 11px;
+    }
+
+    .card-item-price {
+        font-size: 13px;
     }
 }

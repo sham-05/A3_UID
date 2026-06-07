@@ -13,11 +13,11 @@
 <body>
     <nav class="navbar">
         <div class="navbar-logo">
-            <button class="nav-btn" aria-label="Menu">
+            <button class="nav-btn" aria-label="Menu" onclick="openMenu()">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
-        <div class="navbar-title">Cricket HQ</div>
+        <div class="navbar-title" onclick="window.location.href='/index.html'">Cricket HQ</div>
         <div class="navbar-actions">
             <button class="nav-btn" aria-label="Search">
                 <i style="height:20x" class="fa-solid fa-magnifying-glass"></i>
@@ -35,20 +35,44 @@
         </div>
         <div class="cart-items" id="cartItems"></div>
     </div>
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-header">
+            <h2 class="menu-title">Menu</h2>
+            <button class="menu-close-btn" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <ul class="menu-items" id="menuItems">
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+            <li><a class="menu-link" href="/product-categories.html"><i
+                    class="fa-solid fa-tag"></i><span>Products</span></a></li>
+            <li><a class="menu-link" href="/checkout.html"><i
+                    class="fa-solid fa-cart-shopping"></i><span>Checkout</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Testimonials</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Coaching</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>Net Hire</span></a></li>
+            <li><a class="menu-link" href="/index.html"><i class="fa-solid fa-circle-info"></i><span>About Us</span></a></li>
+        </ul>
+    </div>
     <section id="top-image">
         <img class="top_img" src="/assets/cricbats.png">
     </section>
     <section class="product-header">
         <h3>SHOP BY CATEGORY</h3>
         <h2>BATS</h2>
-        <div class="breadcrumb-nav">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
             <a class="breadcrumb-link" href="/index.html">HOME</a>
             <a class="breadcrumb-link">></a>
             <a class="breadcrumb-link" href="/product-categories.html">PRODUCT CATEGORIES</a>
             <a class="breadcrumb-link">></a>
             <a class="breadcrumb-link" href="bats.html">BATS</a>
-        </div>
+        </nav>
     </section>
+
+    <div class="mobile-filter-bar">
+        <button class="mobile-filter-btn" onclick="openFilterPanel()">
+            <i class="fa-solid fa-sliders"></i> FILTER
+        </button>
+    </div>
 
     <div class="filter-products-layout">
         <div class="filter-box">
@@ -83,10 +107,15 @@
             </div>
             <div class="filter-section">
                 <h3 class="filter-section-title">PRICE</h3>
-                <input type="range" min="50" max="400" value="50">
+                <div class="price-range-display">
+                    <span class="price-range-label">$0</span>
+                    <span class="price-range-dash">—</span>
+                    <span class="price-range-label price-range-max" id="priceMaxDisplay">$500</span>
+                </div>
+                <input type="range" id="priceSlider" min="50" max="500" step="50" value="500">
                 <div class="price-range-labels">
                     <span>$50</span>
-                    <span>$400</span>
+                    <span>$500</span>
                 </div>
             </div>
             <div class="filter-actions">
@@ -97,35 +126,119 @@
         <div class="product-categories-grid">
             <a class="product-categories-card" href="/item-description.html">
                 <img src="/assets/bat.png">
-                <h3>KOOKABURRA 360</h3>
+                <div class="card-label">
+                    <h3>KOOKABURRA 360</h3>
+                    <span class="card-item-price">$199</span>
+                </div>
             </a>
-            <a class="product-categories-card" href="products.html?type=gloves">
+            <a class="product-categories-card" href="/gray-niccols-1000.html">
                 <img src="/assets/bat.png">
-                <h3>GRAY NICCOLS 1000</h3>
+                <div class="card-label">
+                    <h3>GRAY NICCOLS 1000</h3>
+                    <span class="card-item-price">$449</span>
+                </div>
             </a>
-            <a class="product-categories-card" href="/product_categories/shoes.html">
+            <a class="product-categories-card product-categories-card--placeholder">
                 <img src="/assets/bat.png">
-                <h3>NIKE 100</h3>
+                <div class="card-label">
+                    <h3>PLACEHOLDER</h3>
+                    <span class="card-item-price">$149</span>
+                </div>
             </a>
-            <a class="product-categories-card" href="products.html?type=helmets">
+            <a class="product-categories-card product-categories-card--placeholder">
                 <img src="/assets/bat.png">
-                <h3>KOOKABURRA SUPERSTART</h3>
+                <div class="card-label">
+                    <h3>PLACEHOLDER</h3>
+                    <span class="card-item-price">$199</span>
+                </div>
             </a>
-            <a class="product-categories-card" href="products.html?type=pads">
+            <a class="product-categories-card product-categories-card--placeholder">
                 <img src="/assets/bat.png">
-                <h3>GRAY NICCOLS 200</h3>
+                <div class="card-label">
+                    <h3>PLACEHOLDER</h3>
+                    <span class="card-item-price">$379</span>
+                </div>
             </a>
-            <a class="product-categories-card" href="products.html?type=bags">
+            <a class="product-categories-card product-categories-card--placeholder">
                 <img src="/assets/bat.png">
-                <h3>GRAY NICCOLS 30</h3>
+                <div class="card-label">
+                    <h3>PLACEHOLDER</h3>
+                    <span class="card-item-price">$89</span>
+                </div>
             </a>
         </div>
     </div>
+    <div class="filter-panel-overlay" id="filterPanelOverlay" onclick="closeFilterPanel()"></div>
+    <div class="filter-panel-mobile" id="filterPanelMobile">
+        <div class="filter-panel-handle"></div>
+        <div class="filter-panel-header">
+            <h3 class="filter-panel-title">FILTER</h3>
+            <button class="filter-panel-close" onclick="closeFilterPanel()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="filter-section">
+            <h3 class="filter-section-title">BRANDS</h3>
+            <div class="filter-item"><label>KOOKABURRA</label><input type="checkbox"></div>
+            <div class="filter-item"><label>GRAY-NICOLLS</label><input type="checkbox"></div>
+            <div class="filter-item"><label>MRF</label><input type="checkbox"></div>
+            <div class="filter-item"><label>SG</label><input type="checkbox"></div>
+        </div>
+        <div class="filter-section">
+            <h3 class="filter-section-title">BAT SIZE</h3>
+            <div class="size-grid">
+                <button class="size-btn">SH</button>
+                <button class="size-btn">LH</button>
+                <button class="size-btn">SIZE 6</button>
+                <button class="size-btn">SIZE 5</button>
+                <button class="size-btn">HARROW</button>
+            </div>
+        </div>
+        <div class="filter-section">
+            <h3 class="filter-section-title">PRICE</h3>
+            <div class="price-range-display">
+                <span class="price-range-label">$0</span>
+                <span class="price-range-dash">—</span>
+                <span class="price-range-label price-range-max" id="priceMaxDisplayMobile">$500</span>
+            </div>
+            <input type="range" id="priceSliderMobile" min="50" max="500" step="50" value="500">
+            <div class="price-range-labels">
+                <span>$50</span>
+                <span>$500</span>
+            </div>
+        </div>
+        <div class="filter-actions">
+            <button class="btn btn-primary" onclick="applyFilter(); closeFilterPanel()">Apply Filter</button>
+            <button class="btn btn-secondary" onclick="clearFilter(); closeFilterPanel()">Clear Filter</button>
+        </div>
+    </div>
+
     <script src="/cart.js"></script>
+    <script src="/menu.js"></script>
     <script>
         document.querySelectorAll('.size-btn').forEach(btn => {
             btn.addEventListener('click', () => btn.classList.toggle('active'));
         });
+
+        const priceSlider = document.getElementById('priceSlider');
+        const priceMaxDisplay = document.getElementById('priceMaxDisplay');
+        priceSlider.addEventListener('input', () => {
+            priceMaxDisplay.textContent = '$' + priceSlider.value;
+        });
+
+        const priceSliderMobile = document.getElementById('priceSliderMobile');
+        const priceMaxDisplayMobile = document.getElementById('priceMaxDisplayMobile');
+        priceSliderMobile.addEventListener('input', () => {
+            priceMaxDisplayMobile.textContent = '$' + priceSliderMobile.value;
+        });
+
+        function openFilterPanel() {
+            document.getElementById('filterPanelMobile').classList.add('filter-panel-mobile--open');
+            document.getElementById('filterPanelOverlay').classList.add('filter-panel-overlay--visible');
+        }
+
+        function closeFilterPanel() {
+            document.getElementById('filterPanelMobile').classList.remove('filter-panel-mobile--open');
+            document.getElementById('filterPanelOverlay').classList.remove('filter-panel-overlay--visible');
+        }
 
         function applyFilter() {
             const cards = document.querySelectorAll('.product-categories-card');

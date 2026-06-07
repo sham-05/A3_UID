@@ -40,15 +40,16 @@
     font-size: 108px;
     font-weight: 900;
     color: #111;
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    -webkit-text-stroke: 1px red;
+    font-family: 'Barlow Condensed', sans-serif;
+    -webkit-text-stroke: 2px white;
     padding-top: 20px;
 }
 
 .hero-word--green {
-    color: var(--website-green);
-    -webkit-text-stroke: 3px #000;
-    padding-top: 100px;
+    color: var(--website-white);
+    -webkit-text-stroke: 2px black;
+    padding-top: 120px;
+    font-size: 120px;
 }
 
 .hero-buttons {
@@ -97,17 +98,27 @@
 }
 
 .category-card {
+    display: block;
     background: white;
     border: 2px solid var(--website-green);
     padding: 20px;
     filter: drop-shadow(2px 2px 5px);
-
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .category-card img {
     width: 100%;
     height: 200px;
     object-fit: contain;
+}
+
+.category-card h3 {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 12px;
 }
 
 .featured-column {
@@ -124,6 +135,9 @@
     flex-direction: column;
     justify-content: space-between;
     filter: drop-shadow(2px 2px 5px);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .featured-card img {
@@ -137,7 +151,7 @@
 }
 
 .card-info {
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin-top: auto;
 }
 
@@ -227,12 +241,14 @@
         font-size: 40px;
         padding-top: 0;
         padding-right: 6px;
+        -webkit-text-stroke: 0.7px white;
     }
 
     .hero-word--green {
         flex: 0 0 100%;
         padding-top: 0;
-        font-size: 40px;
+        font-size: 60px;
+        -webkit-text-stroke: 2px black;
     }
 
     .hero-buttons {
@@ -273,5 +289,12 @@
 
     .category-card img {
         height: 90px;
+    }
+
+    .category-card h3 {
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        margin-top: 12px;
     }
 }

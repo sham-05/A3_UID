@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Description</title>
+    <title>Gray Nicolls 1000 — Cricket HQ</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/item-description.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -29,13 +29,13 @@
     </nav>
     <section class="breadcrumb">
         <div class="breadcrumb-nav">
-            <a class="breadcrumb-link" href="index.html">HOME</a>
+            <a class="breadcrumb-link" href="/index.html">HOME</a>
             <a class="breadcrumb-link">></a>
-            <a href="product-categories.html" class="breadcrumb-link">PRODUCT CATEGORIES</a>
+            <a href="/product-categories.html" class="breadcrumb-link">PRODUCT CATEGORIES</a>
             <a class="breadcrumb-link">></a>
             <a href="/product_categories/bats.html" class="breadcrumb-link">BATS</a>
             <a class="breadcrumb-link">></a>
-            <a href="product-categories.html" class="breadcrumb-link">KOOKABURRA KICKS 360</a>
+            <a class="breadcrumb-link">GRAY NICOLLS 1000</a>
         </div>
     </section>
     <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
@@ -73,7 +73,7 @@
         </ul>
     </div>
     <section class="item-header-section">
-        <h1 class="featured-title">KOOKABURRA 360</h1>
+        <h1 class="featured-title">GRAY NICOLLS 1000</h1>
         <div class="item-grid">
             <div class="item-card-large">
                 <div class="item-card">
@@ -89,23 +89,22 @@
                 </div>
             </div>
         </div>
-        <span class="item-price">$199.00</span>
+        <span class="item-price">$449.00</span>
     </section>
     <section class="size-section">
         <h1>SIZE</h1>
         <div class="size-row">
-            <button class="size-pill" onclick="selectSize(this)">US 6</button>
-            <button class="size-pill" onclick="selectSize(this)">US 7</button>
-            <button class="size-pill" onclick="selectSize(this)">US 8</button>
-            <button class="size-pill" onclick="selectSize(this)">US 9</button>
-            <button class="size-pill" onclick="selectSize(this)">US 10</button>
-            <button class="size-pill" onclick="selectSize(this)">US 11</button>
+            <button class="size-pill" onclick="selectSize(this)">SH</button>
+            <button class="size-pill" onclick="selectSize(this)">LH</button>
+            <button class="size-pill" onclick="selectSize(this)">HARROW</button>
+            <button class="size-pill" onclick="selectSize(this)">SIZE 6</button>
+            <button class="size-pill" onclick="selectSize(this)">SIZE 5</button>
         </div>
     </section>
 
     <section class="cart-buttons">
         <button class="btn btn-primary item-add-to-cart"
-            onclick="addToCart('KOOKABURRA 360', '$199.00', '/assets/bat.png')">ADD TO CART</button>
+            onclick="addToCart('GRAY NICOLLS 1000', '$449.00', '/assets/bat.png')">ADD TO CART</button>
         <div class="quantitySelector">
             <button class="reduceQty" onclick="reduceQty()">-</button>
             <p id="cart-qty">1</p>
@@ -114,57 +113,47 @@
     </section>
 
     <section class="item-tabs-section">
-        <!-- HEADER TAB -->
         <div class="item-tabs-header">
             <button class="item-tab item-tab--active" onclick="switchTab(this, 'tab-description')">DESCRIPTION</button>
             <button class="item-tab" onclick="switchTab(this, 'tab-specifications')">SPECIFICATIONS</button>
         </div>
 
-        <!-- Description tab info-->
         <div class="item-tab-body" id="tab-description">
-            <p>THE HQ CANNON IS MADE OF THE VERY BEST HAND-SELECTED 'TEST MATCH' GRADE 1 UNBLEACHED ENGLISH WILLOW</p>
-            <p>HIGH SPINE &amp; THICK EDGES</p>
-            <p>'DYNAMIC POWER' SHAPED FACE</p>
-            <p>NATURALLY 'AIR DRIED'</p>
-            <p>PRE PREPARED</p>
-            <p>AVAILABLE IN SHORT HANDLE, HARROW ($595), LONG HANDLE AND LONG BLADE ($595)</p>
-            <p>WEIGHT RANGE 2LB 7OZ TO 2LB 12OZ - PRICING VARIES DEPENDENT ON WEIGHT AND GRADE OF BAT</p>
+            <p>THE GRAY NICOLLS 1000 IS CRAFTED FROM PREMIUM GRADE 1 ENGLISH WILLOW, HAND-SELECTED FOR EXCEPTIONAL
+                PERFORMANCE</p>
+            <p>FULL PROFILE WITH HIGH SPINE FOR MAXIMUM POWER</p>
+            <p>ROUNDED EDGES FOR IMPROVED DURABILITY AND DRIVING PERFORMANCE</p>
+            <p>TRADITIONALLY SHAPED FACE FOR CONSISTENT MIDDLE</p>
+            <p>NATURAL OIL FINISH FOR OPTIMAL MOISTURE RESISTANCE</p>
+            <p>AVAILABLE IN SHORT HANDLE AND LONG HANDLE</p>
+            <p>WEIGHT RANGE 2LB 7OZ TO 2LB 12OZ - PRICING MAY VARY BY WEIGHT</p>
             <p>PLEASE NOTE THAT ALL ORDERS ARE CLICK AND COLLECT AT THE MOMENT - WE WILL BE IN TOUCH ONCE ORDER HAS BEEN
                 PROCESSED TO ARRANGE A TIME TO COLLECT FROM 51-53 LEVANSWELL ROAD MOORABBIN</p>
         </div>
 
-        <!-- Specifications tab info -->
         <div class="item-tab-body item-tab-body--hidden" id="tab-specifications">
-            <p>RUBBER</p>
-            <p>CARBON PLATED</p>
-            <p>CARBON FIBRE</p>
-            <p>MESH UPPER</p>
-            <p>TPU HELL COUNTER</p>
-            <p>BREATHABLE LINING</p>
-            <p>FOAM MIDSOLE</p>
+            <p>GRADE 1 ENGLISH WILLOW</p>
+            <p>FULL PROFILE BLADE</p>
+            <p>HIGH SPINE</p>
+            <p>ROUNDED EDGES</p>
+            <p>TRADITIONAL SHAPE</p>
+            <p>NATURAL OIL FINISH</p>
+            <p>SARAWAK CANE HANDLE</p>
+            <p>RUBBER GRIP INCLUDED</p>
         </div>
     </section>
 
     <script src="/cart.js"></script>
     <script src="/menu.js"></script>
     <script>
-
-        /*
-        This logic handles switching between description and specification tabs
-
-        */
         function selectSize(btn) {
             document.querySelectorAll('.size-pill').forEach(p => p.classList.remove('size-pill--selected'));
             btn.classList.add('size-pill--selected');
         }
 
         function switchTab(btn, tabId) {
-
-            // Sets previous tab to inactive and hides the tab body
             document.querySelectorAll('.item-tab').forEach(t => t.classList.remove('item-tab--active'));
             document.querySelectorAll('.item-tab-body').forEach(p => p.classList.add('item-tab-body--hidden'));
-
-            // Make the clicked tab active and make the clicked tab body's visible.
             btn.classList.add('item-tab--active');
             document.getElementById(tabId).classList.remove('item-tab-body--hidden');
         }
