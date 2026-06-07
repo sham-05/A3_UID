@@ -12,7 +12,7 @@ function closeMenu() {
 function setActiveMenuLink() {
     const filename = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.menu-link').forEach(link => {
-        const href = link.getAttribute('href').replace(/^\//, '');
+        const href = link.getAttribute('href').split('/').pop();
         if (href === filename) {
             link.classList.add('menu-link--active');
         }

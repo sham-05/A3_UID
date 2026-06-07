@@ -121,7 +121,7 @@ function validateCheckout() {
             valid = false;
         }
     });
-    if (valid) window.location.href = '/checkout-payment.html';
+    if (valid) window.location.href = '/A3_UID/checkout-payment.html';
 }
 
 // Clear error state as soon as the user types in a flagged field
